@@ -1,0 +1,272 @@
+<div id="ch-tab-wavespeed" class="st-chatu8-settings-wavespeed">
+    <!-- 固定提示词 -->
+    <div class="ch-prompts-section st-chatu8-settings-section st-chatu8-collapsible-section is-collapsed" data-section-id="fixed_prompts_wavespeed">
+        <div class="st-chatu8-section-header">
+            <h3 class="st-chatu8-section-title">固定提示词</h3>
+            <span class="st-chatu8-section-toggle">
+                <i class="fa-solid fa-chevron-down st-chatu8-section-toggle-icon"></i>
+            </span>
+        </div>
+        <div class="st-chatu8-section-body">
+            <div class="st-chatu8-field">
+                <label for="yusheid_wavespeed">提示词预设</label>
+                <div class="st-chatu8-profile-controls">
+                    <select id="yusheid_wavespeed" class="st-chatu8-select"></select>
+                    <div class="st-chatu8-preset-box-wrapper">
+                        <button type="button" class="st-chatu8-icon-btn st-chatu8-preset-box-btn" title="预设操作收纳盒">
+                            <i class="fa-solid fa-table-cells"></i>
+                        </button>
+                        <div class="st-chatu8-preset-box-dropdown">
+                            <div class="st-chatu8-preset-box-header">
+                                <span class="st-chatu8-preset-box-title"><i class="fa-solid fa-box-archive"></i> 提示词预设操作</span>
+                                <button type="button" class="st-chatu8-preset-box-close" title="关闭">&times;</button>
+                            </div>
+                            <div class="st-chatu8-preset-box-group">
+                                <span class="st-chatu8-preset-box-group-label">预设管理</span>
+                                <div class="st-chatu8-preset-box-grid">
+                                    <button type="button" class="st-chatu8-preset-box-item" id="st_chatu8_tishici_visual_select_wavespeed" title="可视化选择"><i class="fa-solid fa-grip"></i><span>可视化</span></button>
+                                    <button type="button" class="st-chatu8-preset-box-item" id="st_chatu8_tishici_new_wavespeed" title="新建预设"><i class="fa-solid fa-plus"></i><span>新建</span></button>
+                                    <button type="button" class="st-chatu8-preset-box-item" id="st_chatu8_tishici_update_style_wavespeed" title="保存修改"><i class="fa-solid fa-save"></i><span>保存</span></button>
+                                    <button type="button" class="st-chatu8-preset-box-item" id="st_chatu8_tishici_save_style_wavespeed" title="另存为新预设"><i class="fa-solid fa-file-export"></i><span>另存为</span></button>
+                                    <button type="button" class="st-chatu8-preset-box-item" id="st_chatu8_tishici_rename_wavespeed" title="重命名预设"><i class="fa-solid fa-pen"></i><span>重命名</span></button>
+                                </div>
+                            </div>
+                            <div class="st-chatu8-preset-box-group">
+                                <span class="st-chatu8-preset-box-group-label">导入与导出</span>
+                                <div class="st-chatu8-preset-box-grid">
+                                    <button type="button" class="st-chatu8-preset-box-item" id="st_chatu8_tishici_export_current_wavespeed" title="导出当前预设"><i class="fa-solid fa-upload"></i><span>导出当前</span></button>
+                                    <button type="button" class="st-chatu8-preset-box-item" id="st_chatu8_tishici_export_all_wavespeed" title="导出全部预设"><i class="fa-solid fa-file-export"></i><span>导出全部</span></button>
+                                    <button type="button" class="st-chatu8-preset-box-item" id="st_chatu8_tishici_import_wavespeed" title="导入预设文件"><i class="fa-solid fa-download"></i><span>导入</span></button>
+                                </div>
+                            </div>
+                            <div class="st-chatu8-preset-box-group">
+                                <span class="st-chatu8-preset-box-group-label">危险操作</span>
+                                <div class="st-chatu8-preset-box-grid">
+                                    <button type="button" class="st-chatu8-preset-box-item danger" id="st_chatu8_tishici_delete_style_wavespeed" title="删除预设"><i class="fa-solid fa-trash"></i><span>删除预设</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="st-chatu8-field-col">
+                <label for="fixedPrompt_wavespeed">固定正面提示词 <span class="st-chatu8-unsaved-warning" title="设置尚未保存" style="display: none;"><i class="fa-solid fa-triangle-exclamation"></i></span></label>
+                <button class="st-chatu8-icon-btn" id="translate_fixedPrompt_wavespeed" title="翻译" style="align-self: flex-end; margin: 4px 0;"><i class="fa-solid fa-language"></i></button>
+                <textarea id="fixedPrompt_wavespeed" class="st-chatu8-textarea" rows="4"></textarea>
+                <div id="fixedPrompt_wavespeed-results" class="ch-autocomplete-results"></div>
+            </div>
+            <div class="st-chatu8-field-col">
+                <label for="fixedPrompt_end_wavespeed">后置固定正面提示词 <span class="st-chatu8-unsaved-warning" title="设置尚未保存" style="display: none;"><i class="fa-solid fa-triangle-exclamation"></i></span></label>
+                <button class="st-chatu8-icon-btn" id="translate_fixedPrompt_end_wavespeed" title="翻译" style="align-self: flex-end; margin: 4px 0;"><i class="fa-solid fa-language"></i></button>
+                <textarea id="fixedPrompt_end_wavespeed" class="st-chatu8-textarea" rows="4"></textarea>
+                <div id="fixedPrompt_end_wavespeed-results" class="ch-autocomplete-results"></div>
+            </div>
+            <div class="st-chatu8-field-col">
+                <label for="negativePrompt_wavespeed">固定负面提示词 <span class="st-chatu8-unsaved-warning" title="设置尚未保存" style="display: none;"><i class="fa-solid fa-triangle-exclamation"></i></span></label>
+                <textarea id="negativePrompt_wavespeed" class="st-chatu8-textarea" rows="4"></textarea>
+                <div id="negativePrompt_wavespeed-results" class="ch-autocomplete-results"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 提示词替换 -->
+    <div class="st-chatu8-settings-section st-chatu8-collapsible-section is-collapsed" data-section-id="prompt_replace_wavespeed">
+        <div class="st-chatu8-section-header">
+            <h3 class="st-chatu8-section-title">提示词替换</h3>
+            <span class="st-chatu8-section-toggle">
+                <i class="fa-solid fa-chevron-down st-chatu8-section-toggle-icon"></i>
+            </span>
+        </div>
+        <div class="st-chatu8-section-body">
+            <div class="st-chatu8-field">
+                <label for="prompt_replace_id_wavespeed">提示词替换预设</label>
+                <div class="st-chatu8-profile-controls">
+                    <select id="prompt_replace_id_wavespeed" class="st-chatu8-select"></select>
+                    <div class="st-chatu8-preset-box-wrapper">
+                        <button type="button" class="st-chatu8-icon-btn st-chatu8-preset-box-btn" title="预设操作收纳盒">
+                            <i class="fa-solid fa-table-cells"></i>
+                        </button>
+                        <div class="st-chatu8-preset-box-dropdown">
+                            <div class="st-chatu8-preset-box-header">
+                                <span class="st-chatu8-preset-box-title"><i class="fa-solid fa-box-archive"></i> 替换预设操作</span>
+                                <button type="button" class="st-chatu8-preset-box-close" title="关闭">&times;</button>
+                            </div>
+                            <div class="st-chatu8-preset-box-group">
+                                <span class="st-chatu8-preset-box-group-label">预设管理</span>
+                                <div class="st-chatu8-preset-box-grid">
+                                    <button type="button" class="st-chatu8-preset-box-item" id="prompt_replace_new_wavespeed" title="新建预设"><i class="fa-solid fa-plus"></i><span>新建</span></button>
+                                    <button type="button" class="st-chatu8-preset-box-item" id="prompt_replace_update_style_wavespeed" title="保存修改"><i class="fa-solid fa-save"></i><span>保存</span></button>
+                                    <button type="button" class="st-chatu8-preset-box-item" id="prompt_replace_save_style_wavespeed" title="另存为新预设"><i class="fa-solid fa-file-export"></i><span>另存为</span></button>
+                                    <button type="button" class="st-chatu8-preset-box-item" id="prompt_replace_rename_wavespeed" title="重命名预设"><i class="fa-solid fa-pen"></i><span>重命名</span></button>
+                                </div>
+                            </div>
+                            <div class="st-chatu8-preset-box-group">
+                                <span class="st-chatu8-preset-box-group-label">导入与导出</span>
+                                <div class="st-chatu8-preset-box-grid">
+                                    <button type="button" class="st-chatu8-preset-box-item" id="prompt_replace_export_current_wavespeed" title="导出当前预设"><i class="fa-solid fa-upload"></i><span>导出当前</span></button>
+                                    <button type="button" class="st-chatu8-preset-box-item" id="prompt_replace_export_all_wavespeed" title="导出全部预设"><i class="fa-solid fa-file-export"></i><span>导出全部</span></button>
+                                    <button type="button" class="st-chatu8-preset-box-item" id="prompt_replace_import_wavespeed" title="导入预设文件"><i class="fa-solid fa-download"></i><span>导入</span></button>
+                                </div>
+                            </div>
+                            <div class="st-chatu8-preset-box-group">
+                                <span class="st-chatu8-preset-box-group-label">危险操作</span>
+                                <div class="st-chatu8-preset-box-grid">
+                                    <button type="button" class="st-chatu8-preset-box-item danger" id="prompt_replace_delete_style_wavespeed" title="删除预设"><i class="fa-solid fa-trash"></i><span>删除预设</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="st-chatu8-field-col">
+                <label for="prompt_replace_text_wavespeed">替换规则 <span class="st-chatu8-unsaved-warning" title="设置尚未保存" style="display: none;"><i class="fa-solid fa-triangle-exclamation"></i></span></label>
+                <textarea id="prompt_replace_text_wavespeed" class="st-chatu8-textarea" rows="4"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- 质量预设 -->
+    <div class="st-chatu8-settings-section">
+        <div class="st-chatu8-field">
+            <label for="AQT_wavespeed">正面质量预设</label>
+            <select id="AQT_wavespeed" class="st-chatu8-select">
+                <option value="best quality, amazing quality, very aesthetic, absurdres">启用</option>
+                <option value="">禁用</option>
+            </select>
+        </div>
+        <div class="st-chatu8-field">
+            <label for="UCP_wavespeed">负面质量预设</label>
+            <select id="UCP_wavespeed" class="st-chatu8-select">
+                <option value="">无（推荐用于自然语言大模型如 Flux / Seedream）</option>
+                <option value="bad proportions, out of focus, username, text, bad anatomy, lowres, worstquality, watermark, cropped, bad body, deformed, mutated, disfigured, poorly drawn face, malformed hands, extra arms, extra limb, missing limb, too many fingers, extra legs, bad feet, missing fingers, fused fingers, acnes, floating limbs, disconnected limbs, long neck, long body, mutation, ugly, blurry, low quality, sketches, normal quality, monochrome, grayscale, signature, logo, jpeg artifacts, unfinished, displeasing, chromatic aberration, extra digits, artistic error, scan, abstract, photo, realism, screencap">作者预设</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- WaveSpeed API 连接与鉴权 -->
+    <div class="st-chatu8-settings-section">
+        <h3>WaveSpeed API 设置</h3>
+        <div class="st-chatu8-field-col">
+            <label for="wavespeed_apiUrl">API 基础地址 (Base URL)</label>
+            <input type="text" id="wavespeed_apiUrl" class="st-chatu8-text-input" placeholder="https://api.wavespeed.ai/api/v3" value="https://api.wavespeed.ai/api/v3">
+        </div>
+        <div class="st-chatu8-field-col" style="margin-top: 10px;">
+            <div class="st-chatu8-rh-header-row" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                <label for="wavespeed_apiKey" style="margin: 0;">API Key</label>
+                <button type="button" id="testWaveSpeed" class="st-chatu8-btn st-chatu8-rh-test-btn" style="padding: 4px 12px; font-size: 12px;">
+                    <i class="fa-solid fa-bolt"></i> 连通测试 / 查余额
+                </button>
+            </div>
+            <div style="position: relative; display: flex; align-items: center;">
+                <input type="password" id="wavespeed_apiKey" class="st-chatu8-text-input" placeholder="在此输入您的 WaveSpeed API Key" style="padding-right: 2.2em;">
+                <button type="button" id="wavespeed_apiKey_toggle" title="显示/隐藏 API Key" style="position: absolute; right: 0.5em; background: none; border: none; cursor: pointer; color: inherit; opacity: 0.65; padding: 0; font-size: 1em; line-height: 1;">
+                    <i class="fa-solid fa-eye"></i>
+                </button>
+            </div>
+            <div id="wavespeed_balance_status" style="margin-top: 8px; font-size: 12px; display: none;"></div>
+        </div>
+    </div>
+
+    <!-- WaveSpeed 模型配置 -->
+    <div class="st-chatu8-settings-section">
+        <h3>模型选择</h3>
+        <div style="font-size: 12px; opacity: 0.75; margin-bottom: 10px; line-height: 1.5;">
+            <i class="fa-solid fa-circle-info"></i> 可从下拉列表选择常用模型，或点击右侧 <i class="fa-solid fa-pen-to-square"></i> 按钮自由添加 <a href="https://wavespeed.ai/models" target="_blank" style="color: var(--st-chatu8-accent-color, #60a5fa); text-decoration: underline;">WaveSpeed 模型库</a> 中的任意模型路径（如 <code>wavespeed-ai/z-image/turbo</code>）。
+        </div>
+        <div class="st-chatu8-field">
+            <label for="wavespeed_model">文生图模型</label>
+            <div class="st-chatu8-profile-controls">
+                <select id="wavespeed_model" class="st-chatu8-select"></select>
+                <button type="button" class="st-chatu8-icon-btn" id="edit_wavespeed_model_options" title="编辑/添加文生图模型选项"><i class="fa-solid fa-pen-to-square"></i></button>
+            </div>
+        </div>
+        <div class="st-chatu8-field">
+            <label for="wavespeed_edit_model">修图 / 图生图模型</label>
+            <div class="st-chatu8-profile-controls">
+                <select id="wavespeed_edit_model" class="st-chatu8-select"></select>
+                <button type="button" class="st-chatu8-icon-btn" id="edit_wavespeed_edit_model_options" title="编辑/添加修图模型选项"><i class="fa-solid fa-pen-to-square"></i></button>
+            </div>
+        </div>
+        <div class="st-chatu8-field">
+            <label for="wavespeed_video_model">视频生成模型</label>
+            <div class="st-chatu8-profile-controls">
+                <select id="wavespeed_video_model" class="st-chatu8-select"></select>
+                <button type="button" class="st-chatu8-icon-btn" id="edit_wavespeed_video_model_options" title="编辑/添加视频模型选项"><i class="fa-solid fa-pen-to-square"></i></button>
+            </div>
+        </div>
+        <div class="st-chatu8-field">
+            <label for="wavespeed_image_param">参考图参数格式</label>
+            <select id="wavespeed_image_param" class="st-chatu8-select" title="修图或图生视频上传参考图后写入请求体的字段格式">
+                <option value="image">单图字段 (image: "https://...")</option>
+                <option value="images">多图数组 (images: ["https://..."])</option>
+                <option value="both">同时包含 (image + images，兼容性最强)</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- 生成参数 -->
+    <div class="st-chatu8-settings-section">
+        <h3>生成参数</h3>
+        <div class="st-chatu8-field">
+            <label for="wavespeed_size">预设尺寸</label>
+            <select id="wavespeed_size" class="st-chatu8-select">
+                <option value="1024x1024" selected>1024x1024 (1:1 标准正方形)</option>
+                <option value="1280x720">1280x720 (16:9 横屏)</option>
+                <option value="720x1280">720x1280 (9:16 竖屏)</option>
+                <option value="1152x896">1152x896 (4:3 横屏)</option>
+                <option value="896x1152">896x1152 (3:4 竖屏)</option>
+                <option value="1536x1024">1536x1024 (3:2 高清横屏)</option>
+                <option value="1024x1536">1024x1536 (2:3 高清竖屏)</option>
+                <option value="1920x1080">1920x1080 (16:9 1080P横屏)</option>
+                <option value="1080x1920">1080x1920 (9:16 1080P竖屏)</option>
+                <option value="2048x2048">2048x2048 (1:1 2K正方形)</option>
+                <option value="768x768">768x768 (1:1 轻量)</option>
+                <option value="512x512">512x512 (1:1 极速)</option>
+            </select>
+        </div>
+        <div class="st-chatu8-field">
+            <label for="wavespeed_width">宽度 (width)</label>
+            <input type="number" id="wavespeed_width" class="st-chatu8-text-input" value="1024" min="64" max="4096" step="16">
+        </div>
+        <div class="st-chatu8-field">
+            <label for="wavespeed_height">高度 (height)</label>
+            <input type="number" id="wavespeed_height" class="st-chatu8-text-input" value="1024" min="64" max="4096" step="16">
+        </div>
+        <div class="st-chatu8-field">
+            <label for="wavespeed_size_format">尺寸分隔符格式 (size)</label>
+            <select id="wavespeed_size_format" class="st-chatu8-select">
+                <option value="asterisk">星号分隔 1024*1024（WaveSpeed v3 官方推荐）</option>
+                <option value="x">字母分隔 1024x1024</option>
+                <option value="width_height">拆分为独立 width / height 整数字段</option>
+                <option value="none">不发送 size 字段（使用模型默认尺寸）</option>
+            </select>
+        </div>
+        <div class="st-chatu8-field">
+            <label for="wavespeed_seed">随机种子 (seed)</label>
+            <input type="number" id="wavespeed_seed" class="st-chatu8-text-input" value="-1" placeholder="-1 为随机">
+        </div>
+        <div class="st-chatu8-field">
+            <label for="wavespeed_steps">推理步数 (num_inference_steps，0 为默认)</label>
+            <input type="number" id="wavespeed_steps" class="st-chatu8-text-input" value="0" min="0" max="150" placeholder="0 表示使用模型默认值">
+        </div>
+        <div class="st-chatu8-field">
+            <label for="wavespeed_cfg">引导系数 (guidance_scale，0 为默认)</label>
+            <input type="number" id="wavespeed_cfg" class="st-chatu8-text-input" value="0" min="0" max="30" step="0.5" placeholder="0 表示使用模型默认值">
+        </div>
+        <div class="st-chatu8-field">
+            <label for="wavespeed_duration">视频生成时长 (duration 秒)</label>
+            <input type="number" id="wavespeed_duration" class="st-chatu8-text-input" value="5" min="1" max="30" step="1">
+        </div>
+        <div class="st-chatu8-field">
+            <label for="wavespeed_sync_mode">同步等待模式 (enable_sync_mode)</label>
+            <div class="st-chatu8-toggle">
+                <input id="wavespeed_sync_mode" type="checkbox" />
+                <span class="st-chatu8-slider"></span>
+            </div>
+        </div>
+        <div class="st-chatu8-field-col" style="margin-top: 8px;">
+            <label for="wavespeed_extra_json">附加自定义 JSON 参数（可选，会合并进请求体）</label>
+            <textarea id="wavespeed_extra_json" class="st-chatu8-textarea" rows="3" style="font-family: monospace; font-size: 12px;" placeholder='例如: {"output_format": "jpeg", "enable_safety_checker": false}'></textarea>
+        </div>
+    </div>
+</div>

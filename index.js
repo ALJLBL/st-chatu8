@@ -2453,6 +2453,7 @@ var init_config = __esm({
       yusheid_novelai: "\u9ED8\u8BA4",
       yusheid_comfyui: "\u9ED8\u8BA4",
       yusheid_runninghub: "\u9ED8\u8BA4",
+      yusheid_wavespeed: "\u9ED8\u8BA4",
       randomYushe: "false",
       aiAutonomousResolution: true,
       // AI自主分辨率：开启后，从提示词中提取到的尺寸会覆盖设置中的分辨率参数
@@ -2461,6 +2462,7 @@ var init_config = __esm({
       prompt_replace: { "\u9ED8\u8BA4": { "text": "\u89E6\u53D1\u8BCD1=\u524D\u7F6E\u524D|\u63D2\u5165\u8BCD1\n\u89E6\u53D1\u8BCD2=\u524D\u7F6E\u540E|\u63D2\u5165\u8BCD2\n\u89E6\u53D1\u8BCD3=\u66FF\u6362|\u66FF\u6362\u8BCD3\n\u89E6\u53D1\u8BCD4=\u66FF\u6362|\n\u89E6\u53D1\u8BCD5=\u66FF\u6362\u5206\u89D2\u8272|\u66FF\u6362\u8BCD5\n\u89E6\u53D1\u8BCD6=\u540E\u7F6E\u524D|\u63D2\u5165\u8BCD6\n\u89E6\u53D1\u8BCD7=\u540E\u7F6E\u540E|\u63D2\u5165\u8BCD7\n\u89E6\u53D1\u8BCD8=\u6700\u540E\u7F6E|\u63D2\u5165\u8BCD8" } },
       prompt_replace_id: "\u9ED8\u8BA4",
       prompt_replace_id_runninghub: "\u9ED8\u8BA4",
+      prompt_replace_id_wavespeed: "\u9ED8\u8BA4",
       vibePresets: { "\u9ED8\u8BA4": { model: "nai-diffusion-4-5-curated", infoExtract: 1, strength: 0.6, imageId: null, vibeDataId: null } },
       vibePresetId: "\u9ED8\u8BA4",
       regex_profiles: { "\u9ED8\u8BA4": { beforeAfterRegex: "", textRegex: "" } },
@@ -2594,6 +2596,48 @@ var init_config = __esm({
       runninghub_ref2vid_workflowId: "",
       runninghub_video_test_demand: "",
       runninghub_video_test_prompt: "",
+      // WaveSpeed 配置
+      wavespeed_apiUrl: "https://api.wavespeed.ai/api/v3",
+      wavespeed_apiKey: "",
+      wavespeed_model: "wavespeed-ai/z-image/turbo",
+      wavespeed_edit_model: "wavespeed-ai/flux-kontext-pro",
+      wavespeed_video_model: "wavespeed-ai/wan-2.1/i2v-480p",
+      wavespeed_custom_models: [
+        "wavespeed-ai/z-image/turbo",
+        "wavespeed-ai/flux-dev",
+        "wavespeed-ai/flux-schnell",
+        "wavespeed-ai/flux-dev-ultra-fast",
+        "bytedance/seedream-v3",
+        "google/nano-banana-pro",
+        "wavespeed-ai/hidream-i1-full",
+        "wavespeed-ai/hidream-i1-dev"
+      ],
+      wavespeed_custom_edit_models: [
+        "wavespeed-ai/flux-kontext-pro",
+        "wavespeed-ai/flux-kontext-dev",
+        "wavespeed-ai/flux-dev",
+        "bytedance/seededit-v3"
+      ],
+      wavespeed_custom_video_models: [
+        "wavespeed-ai/wan-2.1/i2v-480p",
+        "wavespeed-ai/wan-2.1/i2v-720p",
+        "wavespeed-ai/wan-2.1/t2v-480p",
+        "wavespeed-ai/wan-2.1/t2v-720p",
+        "wavespeed-ai/minimax-h3/image-to-video",
+        "kwaivgi/kling-v1.6-i2v-standard"
+      ],
+      wavespeed_image_param: "image",
+      wavespeed_size: "1024x1024",
+      wavespeed_width: "1024",
+      wavespeed_height: "1024",
+      wavespeed_size_format: "asterisk",
+      wavespeed_seed: "-1",
+      wavespeed_steps: "0",
+      wavespeed_cfg: "0",
+      wavespeed_duration: "5",
+      wavespeed_sync_mode: "false",
+      wavespeed_extra_json: "",
+      wavespeed_upload_cache: {},
       // ComfyUI 视频配置
       comfyui_val_duration: "4",
       comfyui_val_steps: "20",
@@ -2657,6 +2701,8 @@ var init_config = __esm({
       UCP_comfyui: "bad proportions, out of focus, username, text, bad anatomy, lowres, worstquality, watermark, cropped, bad body, deformed, mutated, disfigured, poorly drawn face, malformed hands, extra arms, extra limb, missing limb, too many fingers, extra legs, bad feet, missing fingers, fused fingers, acnes, floating limbs, disconnected limbs, long neck, long body, mutation, ugly, blurry, low quality, sketches, normal quality, monochrome, grayscale, signature, logo, jpeg artifacts, unfinished, displeasing, chromatic aberration, extra digits, artistic error, scan, abstract, photo, realism, screencap",
       AQT_runninghub: "best quality, amazing quality, very aesthetic, absurdres",
       UCP_runninghub: "bad proportions, out of focus, username, text, bad anatomy, lowres, worstquality, watermark, cropped, bad body, deformed, mutated, disfigured, poorly drawn face, malformed hands, extra arms, extra limb, missing limb, too many fingers, extra legs, bad feet, missing fingers, fused fingers, acnes, floating limbs, disconnected limbs, long neck, long body, mutation, ugly, blurry, low quality, sketches, normal quality, monochrome, grayscale, signature, logo, jpeg artifacts, unfinished, displeasing, chromatic aberration, extra digits, artistic error, scan, abstract, photo, realism, screencap",
+      AQT_wavespeed: "best quality, amazing quality, very aesthetic, absurdres",
+      UCP_wavespeed: "",
       sd_csteps: "28",
       sd_cwidth: "1024",
       sd_cheight: "1024",
@@ -2824,7 +2870,9 @@ var init_config = __esm({
           sd: { success: 0, fail: 0 },
           comfyui: { success: 0, fail: 0 },
           banana: { success: 0, fail: 0 },
-          novelai: { success: 0, fail: 0 }
+          novelai: { success: 0, fail: 0 },
+          runninghub: { success: 0, fail: 0 },
+          wavespeed: { success: 0, fail: 0 }
         },
         total: { success: 0, fail: 0 },
         firstGenTime: null,
@@ -14814,7 +14862,8 @@ var init_taskQueue = __esm({
       AUTO_CLICK: "auto_click",
       SD: "sd",
       LLM: "llm",
-      BANANA: "banana"
+      BANANA: "banana",
+      WAVESPEED: "wavespeed"
     };
     TaskQueue = class {
       constructor() {
@@ -43635,6 +43684,8 @@ function getImageSizeConfigKeys(mode) {
     "sd": { widthKey: "sd_cwidth", heightKey: "sd_cheight", modeName: "SD" },
     "novelai": { widthKey: "novelai_width", heightKey: "novelai_height", modeName: "NovelAI" },
     "comfyui": { widthKey: "comfyui_width", heightKey: "comfyui_height", modeName: "ComfyUI" },
+    "runninghub": { widthKey: "runninghub_width", heightKey: "runninghub_height", modeName: "RunningHub" },
+    "wavespeed": { widthKey: "wavespeed_width", heightKey: "wavespeed_height", modeName: "WaveSpeed" },
     "banana": { widthKey: null, heightKey: null, modeName: "Banana" }
   };
   return configMap[mode] || configMap["comfyui"];
@@ -45702,7 +45753,7 @@ var init_imageGenStats = __esm({
   "utils/imageGenStats.js"() {
     init_settingsSaveScheduler();
     init_config();
-    KNOWN_BACKENDS = ["sd", "comfyui", "banana", "novelai"];
+    KNOWN_BACKENDS = ["sd", "comfyui", "banana", "novelai", "runninghub", "wavespeed"];
   }
 });
 
@@ -50785,6 +50836,596 @@ var init_runninghub = __esm({
     init_runninghubVideo();
     init_runninghubScheduler();
     currentTaskId3 = null;
+  }
+});
+
+// utils/wavespeed.js
+var currentWaveSpeedTaskId = null;
+var currentWaveSpeedRequestId = null;
+var currentWaveSpeedPrompt = null;
+var currentWaveSpeedAbortController = null;
+var WAVESPEED_UPLOAD_CACHE_EXPIRY_MS = 24 * 60 * 60 * 1e3;
+
+async function uploadMediaToWaveSpeed(dataUrl, baseUrl, apiKey, abortSignal) {
+  if (!dataUrl) return null;
+  if (/^https?:\/\//i.test(dataUrl)) return dataUrl;
+  const blob = await dataUrlToBlob(dataUrl);
+  if (!blob) {
+    throw new Error("\u53C2\u8003\u56FE\u6570\u636E\u65E0\u6548\uFF0C\u65E0\u6CD5\u8F6C\u6362\u4E3A\u4E8C\u8FDB\u5236\u6587\u4EF6");
+  }
+  const settings3 = extension_settings51[extensionName] || {};
+  if (!settings3.wavespeed_upload_cache) {
+    settings3.wavespeed_upload_cache = {};
+  }
+  const cache = settings3.wavespeed_upload_cache;
+  const now = Date.now();
+  let fileHash = "";
+  try {
+    if (window.crypto && window.crypto.subtle) {
+      const buffer = await blob.arrayBuffer();
+      const digest = await window.crypto.subtle.digest("SHA-256", buffer);
+      fileHash = "ws_" + Array.from(new Uint8Array(digest)).map((b) => b.toString(16).padStart(2, "0")).join("");
+    }
+  } catch (_e) {
+  }
+  if (fileHash && cache[fileHash] && cache[fileHash].downloadUrl) {
+    if (now - (cache[fileHash].timestamp || 0) <= WAVESPEED_UPLOAD_CACHE_EXPIRY_MS) {
+      addLog(`[WaveSpeed] \u547D\u4E2D\u53C2\u8003\u56FE\u4E0A\u4F20\u7F13\u5B58: ${cache[fileHash].downloadUrl}`);
+      return cache[fileHash].downloadUrl;
+    }
+  }
+  const cleanBase = (baseUrl || "https://api.wavespeed.ai/api/v3").trim().replace(/\/+$/, "");
+  const ext = ((blob.type || "image/png").split("/")[1] || "png").replace("jpeg", "jpg");
+  const filename = `input_${Date.now()}.${ext}`;
+  addLog(`[WaveSpeed] \u6B63\u5728\u7533\u8BF7\u5A92\u4F53\u4E0A\u4F20\u51ED\u8BC1 (${filename}, ${(blob.size / 1024).toFixed(1)} KB)...`);
+  const ticketRes = await fetch(`${cleanBase}/media/uploads`, {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${apiKey}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      filename,
+      size: blob.size,
+      content_type: blob.type || "image/png"
+    }),
+    signal: abortSignal
+  });
+  const ticketText = await ticketRes.text();
+  let ticketBody;
+  try {
+    ticketBody = JSON.parse(ticketText);
+  } catch {
+    ticketBody = { message: ticketText };
+  }
+  if (!ticketRes.ok || ticketBody.code !== 200 || !ticketBody.data?.upload?.url) {
+    throw new Error(`WaveSpeed \u83B7\u53D6\u4E0A\u4F20\u51ED\u8BC1\u5931\u8D25: ${ticketBody.message || `HTTP ${ticketRes.status}`}`);
+  }
+  const uploadUrl = ticketBody.data.upload.url;
+  const uploadHeaders = ticketBody.data.upload.headers || {};
+  const putRes = await fetch(uploadUrl, {
+    method: "PUT",
+    headers: uploadHeaders,
+    body: blob,
+    signal: abortSignal
+  });
+  if (!putRes.ok) {
+    throw new Error(`WaveSpeed \u4E0A\u4F20\u5A92\u4F53\u6587\u4EF6\u5931\u8D25: HTTP ${putRes.status}`);
+  }
+  const downloadUrl = ticketBody.data.download_url;
+  if (!downloadUrl) {
+    throw new Error("WaveSpeed \u4E0A\u4F20\u6210\u529F\u4F46\u672A\u8FD4\u56DE download_url");
+  }
+  addLog(`[WaveSpeed] \u5A92\u4F53\u6587\u4EF6\u4E0A\u4F20\u6210\u529F: ${downloadUrl}`);
+  if (fileHash) {
+    cache[fileHash] = { downloadUrl, timestamp: now };
+    saveSettingsDebounced2();
+  }
+  return downloadUrl;
+}
+
+async function generateWaveSpeedImage({
+  prompt: link,
+  width: Xwidth,
+  height: Xheight,
+  change,
+  retouchPrompt,
+  retouchImage,
+  videoPrompt,
+  videoImage,
+  isVideo: isVideoFlag,
+  extraNegativePrompt
+}) {
+  clearLog();
+  const isEditMode = !!(change && change.includes("{\u4FEE\u56FE}") || retouchImage);
+  const isVideoMode = !!(isVideoFlag || change && change.includes("{\u89C6\u9891}"));
+  const taskTypeName = isVideoMode ? "WaveSpeed \u89C6\u9891\u751F\u6210" : isEditMode ? "WaveSpeed \u4FEE\u56FE/\u56FE\u751F\u56FE" : "WaveSpeed \u6587\u751F\u56FE";
+  const taskId = taskQueue.addTask({
+    name: (link || "").substring(0, 30) + (link && link.length > 30 ? "..." : ""),
+    type: TaskType.WAVESPEED,
+    prompt: link
+  });
+  currentWaveSpeedTaskId = taskId;
+  currentWaveSpeedAbortController = new AbortController();
+  const abortSignal = currentWaveSpeedAbortController.signal;
+  taskQueue.updateStatus(taskId, TaskStatus.RUNNING);
+  const startTime = Date.now();
+  if (!isPluginToastDisabled()) {
+    toastr.info(`\u{1F3A8} \u5DF2\u53D1\u8D77 ${taskTypeName} \u8BF7\u6C42...`);
+  }
+  link = typeof link === "string" ? link : "";
+  change = typeof change === "string" ? change : "";
+  let change_ = change ? change.replaceAll("{\u4FEE\u56FE}", "").replaceAll("{\u89C6\u9891}", "") : link;
+  const sizeRegex = /,?\s*(\d{2,4})x(\d{2,4})(?=[;\s]|$)/i;
+  if (typeof link === "string") {
+    const match = link.match(sizeRegex);
+    if (match && String(extension_settings51[extensionName].aiAutonomousResolution) !== "false") {
+      Xwidth = parseInt(match[1], 10);
+      Xheight = parseInt(match[2], 10);
+    }
+    link = link.replace(sizeRegex, "");
+  }
+  if (typeof change_ === "string") {
+    const match = change_.match(sizeRegex);
+    if (match && String(extension_settings51[extensionName].aiAutonomousResolution) !== "false") {
+      Xwidth = parseInt(match[1], 10);
+      Xheight = parseInt(match[2], 10);
+    }
+    change_ = change_.replace(sizeRegex, "");
+  }
+  link = processCharacterPrompt(link);
+  link = await stripChineseAnnotations(link);
+  change_ = processCharacterPrompt(change_);
+  change_ = await stripChineseAnnotations(change_);
+  const settings3 = extension_settings51[extensionName];
+  const baseUrl = (settings3.wavespeed_apiUrl || "https://api.wavespeed.ai/api/v3").trim().replace(/\/+$/, "");
+  const apiKey = (settings3.wavespeed_apiKey || "").trim();
+  if (!apiKey) {
+    taskQueue.completeTask(taskId, false);
+    currentWaveSpeedTaskId = null;
+    throw new Error("\u8BF7\u5148\u5728 WaveSpeed \u8BBE\u7F6E\u4E2D\u586B\u5199 API Key");
+  }
+  const effectiveModel = (isVideoMode ? settings3.wavespeed_video_model || settings3.wavespeed_model : isEditMode ? settings3.wavespeed_edit_model || settings3.wavespeed_model : settings3.wavespeed_model || "wavespeed-ai/z-image/turbo").trim().replace(/^\/+/, "");
+  if (!effectiveModel) {
+    taskQueue.completeTask(taskId, false);
+    currentWaveSpeedTaskId = null;
+    throw new Error("\u8BF7\u5148\u5728 WaveSpeed \u8BBE\u7F6E\u4E2D\u9009\u62E9\u6216\u6DFB\u52A0\u6A21\u578B");
+  }
+  const promptForGeneration = change_ && change_.trim() !== "" ? change_ : link;
+  let Divide_roles = false;
+  if (promptForGeneration.includes("Scene Composition")) {
+    Divide_roles = true;
+  }
+  let prompt_data = {};
+  let mainPrompt = "";
+  let other_prompt = "";
+  if (Divide_roles) {
+    prompt_data = parsePromptStringWithCoordinates(promptForGeneration);
+    mainPrompt = prompt_data["Scene Composition"];
+    const charIds = getSortedCharacterIds(prompt_data);
+    for (const i of charIds) {
+      if (prompt_data[`Character ${i} Prompt`]) {
+        other_prompt = other_prompt + ", " + prompt_data[`Character ${i} Prompt`];
+      }
+    }
+  } else {
+    mainPrompt = deduplicateTags(promptForGeneration);
+  }
+  let { modifiedPrompt, insertions } = await prompt_replace(mainPrompt, other_prompt);
+  if (Divide_roles) {
+    const charIds = getSortedCharacterIds(prompt_data);
+    for (const i of charIds) {
+      if (prompt_data[`Character ${i} Prompt`]) {
+        modifiedPrompt = modifiedPrompt + " | " + prompt_replace_for_character(prompt_data[`Character ${i} Prompt`], (mainPrompt || "") + " " + (other_prompt || ""));
+      }
+    }
+  }
+  const _ws_yushe_id = getRandomYusheId("yusheid_wavespeed");
+  const _ws_preset = settings3.yushe?.[_ws_yushe_id] || { fixedPrompt: "", fixedPrompt_end: "", negativePrompt: "" };
+  let finalPrompt = "";
+  if (isEditMode && retouchPrompt && retouchPrompt.trim()) {
+    finalPrompt = [_ws_preset.fixedPrompt, retouchPrompt.trim(), _ws_preset.fixedPrompt_end].filter(Boolean).join(", ");
+  } else if (isVideoMode && videoPrompt && videoPrompt.trim()) {
+    finalPrompt = [_ws_preset.fixedPrompt, videoPrompt.trim(), _ws_preset.fixedPrompt_end].filter(Boolean).join(", ");
+  } else {
+    finalPrompt = await zhengmian(
+      _ws_preset.fixedPrompt,
+      modifiedPrompt,
+      _ws_preset.fixedPrompt_end,
+      settings3.AQT_wavespeed,
+      insertions
+    );
+  }
+  let negative_prompt = await fumian(_ws_preset.negativePrompt, settings3.UCP_wavespeed);
+  if (!Divide_roles && window.collectedCharacterNegatives) {
+    const characterNegatives = window.collectedCharacterNegatives.trim();
+    if (characterNegatives) {
+      negative_prompt = negative_prompt ? `${negative_prompt}, ${characterNegatives}` : characterNegatives;
+    }
+  }
+  if (extraNegativePrompt && extraNegativePrompt.trim()) {
+    const trimmedExtra = extraNegativePrompt.trim();
+    negative_prompt = negative_prompt ? `${negative_prompt}, ${trimmedExtra}` : trimmedExtra;
+  }
+  finalPrompt = finalPrompt.replaceAll("\n", ",").replace(/,{2,}/g, ",").trim();
+  negative_prompt = negative_prompt.replaceAll("\n", ",").replace(/,{2,}/g, ",").trim();
+  const reqWidth = Xwidth || (settings3.wavespeed_width ? parseInt(settings3.wavespeed_width, 10) : null) || 1024;
+  const reqHeight = Xheight || (settings3.wavespeed_height ? parseInt(settings3.wavespeed_height, 10) : null) || 1024;
+  const sizeFormat = settings3.wavespeed_size_format || "asterisk";
+  const payload = {
+    prompt: finalPrompt
+  };
+  if (sizeFormat === "asterisk") {
+    payload.size = `${reqWidth}*${reqHeight}`;
+  } else if (sizeFormat === "x") {
+    payload.size = `${reqWidth}x${reqHeight}`;
+  } else if (sizeFormat === "width_height") {
+    payload.width = reqWidth;
+    payload.height = reqHeight;
+  }
+  if (negative_prompt) {
+    payload.negative_prompt = negative_prompt;
+  }
+  const seedVal = parseInt(settings3.wavespeed_seed, 10);
+  if (!isNaN(seedVal) && seedVal >= 0) {
+    payload.seed = seedVal;
+  }
+  if (!isVideoMode) {
+    const stepsVal = parseInt(settings3.wavespeed_steps, 10);
+    if (!isNaN(stepsVal) && stepsVal > 0) {
+      payload.num_inference_steps = stepsVal;
+    }
+    const cfgVal = parseFloat(settings3.wavespeed_cfg);
+    if (!isNaN(cfgVal) && cfgVal > 0) {
+      payload.guidance_scale = cfgVal;
+    }
+  } else {
+    const durationVal = parseInt(settings3.wavespeed_duration, 10);
+    if (!isNaN(durationVal) && durationVal > 0) {
+      payload.duration = durationVal;
+    }
+  }
+  if (String(settings3.wavespeed_sync_mode) === "true") {
+    payload.enable_sync_mode = true;
+  }
+  const refImageSource = isVideoMode ? videoImage : isEditMode ? retouchImage : null;
+  if (refImageSource) {
+    const uploadedUrl = await uploadMediaToWaveSpeed(refImageSource, baseUrl, apiKey, abortSignal);
+    if (uploadedUrl) {
+      const imgParamMode = settings3.wavespeed_image_param || "image";
+      if (imgParamMode === "images") {
+        payload.images = [uploadedUrl];
+      } else if (imgParamMode === "both") {
+        payload.image = uploadedUrl;
+        payload.images = [uploadedUrl];
+      } else {
+        payload.image = uploadedUrl;
+      }
+    }
+  }
+  if (settings3.wavespeed_extra_json && settings3.wavespeed_extra_json.trim()) {
+    try {
+      const extraObj = JSON.parse(settings3.wavespeed_extra_json.trim());
+      if (extraObj && typeof extraObj === "object" && !Array.isArray(extraObj)) {
+        Object.assign(payload, extraObj);
+      }
+    } catch (jsonErr) {
+      addLog(`[WaveSpeed] \u9644\u52A0 JSON \u53C2\u6570\u89E3\u6790\u5931\u8D25\uFF0C\u5DF2\u5FFD\u7565: ${jsonErr.message}`);
+    }
+  }
+  const _ws_gen_params = buildGenParams("WaveSpeed", {
+    model: effectiveModel,
+    yushe: _ws_yushe_id,
+    yusheRandom: String(settings3.randomYushe) === "true",
+    promptReplaceId: settings3.prompt_replace_id || "\u9ED8\u8BA4",
+    width: reqWidth,
+    height: reqHeight,
+    steps: payload.num_inference_steps,
+    cfg: payload.guidance_scale,
+    seed: payload.seed ?? -1,
+    resolvedPrompt: finalPrompt,
+    negativePrompt: negative_prompt || void 0
+  });
+  const submitUrl = `${baseUrl}/${effectiveModel}`;
+  addLog(`[WaveSpeed] \u63D0\u4EA4\u4EFB\u52A1\u5230: ${submitUrl}`);
+  addLog(`[WaveSpeed] \u8BF7\u6C42\u8F7D\u8377: ${JSON.stringify(payload, null, 2)}`);
+  try {
+    const submitRes = await fetch(submitUrl, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload),
+      signal: abortSignal
+    });
+    const submitText = await submitRes.text();
+    let submitBody;
+    try {
+      submitBody = JSON.parse(submitText);
+    } catch {
+      submitBody = { message: submitText };
+    }
+    const isSyncTimeout = submitRes.status === 408 && submitBody?.data?.id;
+    if ((!submitRes.ok && !isSyncTimeout) || (submitBody.code && submitBody.code !== 200 && !isSyncTimeout)) {
+      throw new Error(submitBody.message || submitBody.data?.error || `WaveSpeed \u63D0\u4EA4\u5931\u8D25 (HTTP ${submitRes.status})`);
+    }
+    const submitData = submitBody.data || submitBody;
+    let outputItem = null;
+    if (submitData.status === "completed" && Array.isArray(submitData.outputs) && submitData.outputs.length > 0) {
+      outputItem = submitData.outputs[0];
+      addLog(`[WaveSpeed] \u540C\u6B65\u6A21\u5F0F\u76F4\u63A5\u8FD4\u56DE\u7ED3\u679C!`);
+    } else {
+      const remoteTaskId = submitData.id;
+      if (!remoteTaskId) {
+        throw new Error(`WaveSpeed \u672A\u8FD4\u56DE\u4EFB\u52A1 ID: ${submitText.slice(0, 300)}`);
+      }
+      const resultUrl = submitData.urls?.get || `${baseUrl}/predictions/${remoteTaskId}/result`;
+      addLog(`[WaveSpeed] \u4EFB\u52A1\u5DF2\u521B\u5EFA (ID: ${remoteTaskId})\uFF0C\u8FDB\u5165\u8F6E\u8BE2: ${resultUrl}`);
+      let pollDelay = 2e3;
+      let transientFailures = 0;
+      let pollCount = 0;
+      while (true) {
+        await new Promise((resolve) => setTimeout(resolve, pollDelay));
+        if (!taskQueue.isTaskInQueue(taskId) || abortSignal.aborted) {
+          throw new Error("\u4EFB\u52A1\u5DF2\u53D6\u6D88");
+        }
+        let pollRes;
+        try {
+          pollRes = await fetch(resultUrl, {
+            method: "GET",
+            headers: {
+              "Authorization": `Bearer ${apiKey}`
+            },
+            signal: abortSignal
+          });
+        } catch (fetchErr) {
+          if (abortSignal.aborted || !taskQueue.isTaskInQueue(taskId)) {
+            throw new Error("\u4EFB\u52A1\u5DF2\u53D6\u6D88");
+          }
+          if (++transientFailures > 5) {
+            throw fetchErr;
+          }
+          continue;
+        }
+        const pollText = await pollRes.text();
+        let pollBody;
+        try {
+          pollBody = JSON.parse(pollText);
+        } catch {
+          pollBody = { message: pollText };
+        }
+        if ([429, 500, 502, 503, 504].includes(pollRes.status)) {
+          if (++transientFailures > 5) {
+            throw new Error(pollBody.message || `WaveSpeed \u8F6E\u8BE2\u5931\u8D25 (HTTP ${pollRes.status})`);
+          }
+          pollDelay = Math.min(1e4, pollDelay + 2e3);
+          continue;
+        }
+        if (!pollRes.ok || (pollBody.code && pollBody.code !== 200)) {
+          throw new Error(pollBody.message || `WaveSpeed \u67E5\u8BE2\u7ED3\u679C\u5931\u8D25 (HTTP ${pollRes.status})`);
+        }
+        transientFailures = 0;
+        const data = pollBody.data || pollBody;
+        if (data.status === "completed") {
+          if (Array.isArray(data.outputs) && data.outputs.length > 0) {
+            outputItem = data.outputs[0];
+            addLog(`[WaveSpeed] \u4EFB\u52A1\u6267\u884C\u5B8C\u6210\uFF0C\u83B7\u53D6\u5230\u8F93\u51FA!`);
+            break;
+          }
+          throw new Error("WaveSpeed \u4EFB\u52A1\u5DF2\u5B8C\u6210\u4F46 outputs \u4E3A\u7A7A");
+        }
+        if (["failed", "cancelled", "timeout", "deleted"].includes(data.status)) {
+          throw new Error(`WaveSpeed \u4EFB\u52A1\u5931\u8D25 (${data.status}): ${data.error || pollBody.message || "\u672A\u77E5\u9519\u8BEF"}`);
+        }
+        addLog(`[WaveSpeed] \u4EFB\u52A1\u8FD0\u884C\u4E2D (${data.status || "processing"})...`);
+        pollDelay = Math.min(8e3, pollDelay + 1e3);
+        pollCount++;
+        if (pollCount > 200) {
+          throw new Error("WaveSpeed \u4EFB\u52A1\u8F6E\u8BE2\u8D85\u65F6");
+        }
+      }
+    }
+    let finalMediaData = null;
+    let isVideo = isVideoMode;
+    let mediaFormat = isVideo ? "video/mp4" : "image/png";
+    let originalUrl = "";
+    if (typeof outputItem === "string" && /^https?:\/\//i.test(outputItem)) {
+      originalUrl = outputItem;
+      addLog(`[WaveSpeed] \u6B63\u5728\u4E0B\u8F7D\u751F\u6210\u7ED3\u679C: ${outputItem}`);
+      const fileRes = await fetch(outputItem, { signal: abortSignal });
+      if (!fileRes.ok) {
+        throw new Error(`\u4E0B\u8F7D WaveSpeed \u4EA7\u7269\u5931\u8D25: HTTP ${fileRes.status}`);
+      }
+      const fileBlob = await fileRes.blob();
+      let processedBlob = fileBlob;
+      const isMp4 = /\.(mp4|webm|mov)(\?.*)?$/i.test(outputItem) || fileBlob.type.includes("video/");
+      if (isMp4) {
+        isVideo = true;
+        mediaFormat = fileBlob.type && fileBlob.type.includes("video/") ? fileBlob.type : "video/mp4";
+        if (mediaFormat === "video/mp4") {
+          try {
+            processedBlob = await fixMp4Faststart(fileBlob);
+          } catch (_fastErr) {
+          }
+        }
+      } else if (fileBlob.type && fileBlob.type.startsWith("image/")) {
+        mediaFormat = fileBlob.type;
+      }
+      finalMediaData = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(processedBlob);
+      });
+    } else if (typeof outputItem === "string" && outputItem.startsWith("data:")) {
+      finalMediaData = outputItem;
+      if (outputItem.startsWith("data:video/")) {
+        isVideo = true;
+        mediaFormat = "video/mp4";
+      }
+    } else if (typeof outputItem === "string" && outputItem.length > 0) {
+      finalMediaData = `data:${mediaFormat};base64,${outputItem}`;
+    } else {
+      throw new Error("WaveSpeed \u8FD4\u56DE\u7684\u4EA7\u7269\u683C\u5F0F\u65E0\u6CD5\u8BC6\u522B");
+    }
+    if (String(settings3.convertToJpegStorage) === "true" && !isVideo) {
+      finalMediaData = await convertImageToJpeg(finalMediaData);
+    }
+    const durationSec = ((Date.now() - startTime) / 1e3).toFixed(1);
+    taskQueue.completeTask(taskId, true);
+    if (!isPluginToastDisabled()) {
+      toastr.success(`\u2705 ${taskTypeName}\u5B8C\u6210\uFF0C\u8017\u65F6 ${durationSec} \u79D2`);
+    }
+    addLog(`[WaveSpeed] ${taskTypeName}\u5B8C\u6210\uFF0C\u8017\u65F6 ${durationSec} \u79D2`);
+    currentWaveSpeedTaskId = null;
+    currentWaveSpeedAbortController = null;
+    return {
+      image: finalMediaData,
+      change: change_ || "",
+      isVideo,
+      format: mediaFormat,
+      originalUrl,
+      genParams: _ws_gen_params
+    };
+  } catch (err) {
+    const rawMessage = err instanceof Error ? err.message : String(err);
+    const isCancelled = err?.name === "AbortError" || rawMessage === "\u4EFB\u52A1\u5DF2\u53D6\u6D88";
+    if (!isCancelled) {
+      taskQueue.completeTask(taskId, false);
+      toastr.error(`WaveSpeed \u751F\u6210\u5931\u8D25: ${rawMessage}`);
+    }
+    currentWaveSpeedTaskId = null;
+    currentWaveSpeedAbortController = null;
+    if (isCancelled) {
+      throw new Error("\u4EFB\u52A1\u5DF2\u53D6\u6D88");
+    }
+    throw err;
+  }
+}
+
+async function wavespeedgenerate(requestData) {
+  const { id, prompt: prompt2, width, height, change, retouchPrompt, retouchImage, videoPrompt, videoImage, isVideo: reqIsVideo, negative_prompt: extraNegativePrompt } = requestData;
+  currentWaveSpeedRequestId = id;
+  currentWaveSpeedPrompt = prompt2;
+  addLog(`\u6536\u5230 WaveSpeed \u751F\u6210\u8BF7\u6C42 (ID: ${id}) - Prompt: ${prompt2}${change ? ` - Change: ${change}` : ""}`);
+  try {
+    const { image: imageUrl, change: returnedChange, isVideo, format, originalUrl, genParams } = await generateWaveSpeedImage({
+      prompt: prompt2,
+      width,
+      height,
+      change,
+      retouchPrompt,
+      retouchImage,
+      videoPrompt,
+      videoImage,
+      isVideo: reqIsVideo,
+      extraNegativePrompt
+    });
+    if (extension_settings51[extensionName].cache != "0") {
+      await setItemImg(prompt2, imageUrl, {
+        change: returnedChange || "",
+        isVideo: isVideo || false,
+        format: format || (isVideo ? "video/mp4" : "image/png"),
+        originalUrl: originalUrl || "",
+        genParams,
+        onTailSuccess: () => addLog(`[WaveSpeed] ${isVideo ? "\u89C6\u9891" : "\u56FE\u50CF"}\u5DF2\u5B58\u5165\u6570\u636E\u5E93 for prompt: ${prompt2}`),
+        onTailError: (e) => {
+          const msg = `\u56FE\u7247\u5DF2\u663E\u793A\uFF0C\u4F46\u4FDD\u5B58\u5230\u6570\u636E\u5E93\u5931\u8D25: ${e?.message || e}`;
+          addLog(`\u9519\u8BEF: ${msg}`);
+          if (typeof toastr !== "undefined") toastr.error(msg);
+        }
+      });
+    }
+    recordImageGeneration("wavespeed", true);
+    eventSource23.emit(EventType.GENERATE_IMAGE_RESPONSE, {
+      id,
+      success: true,
+      imageData: imageUrl,
+      isVideo: isVideo || false,
+      format: format || "image",
+      originalUrl: originalUrl || "",
+      prompt: prompt2,
+      change: returnedChange || ""
+    });
+    addLog(`[WaveSpeed] \u5DF2\u53D1\u9001\u6210\u529F\u54CD\u5E94 (ID: ${id})`);
+  } catch (error) {
+    recordImageGeneration("wavespeed", false);
+    const errorMsg = `WaveSpeed \u751F\u6210\u6D41\u7A0B\u5F02\u5E38 (ID: ${id}): ${error.message}`;
+    addLog(`\u9519\u8BEF: ${errorMsg}`);
+    console.error("[WaveSpeed Error]", error);
+    eventSource23.emit(EventType.GENERATE_IMAGE_RESPONSE, {
+      id,
+      success: false,
+      error: error.message,
+      prompt: prompt2,
+      change
+    });
+  } finally {
+    currentWaveSpeedRequestId = null;
+    currentWaveSpeedPrompt = null;
+  }
+}
+
+function handleCancelWaveSpeedTask(data) {
+  const { taskId } = data || {};
+  if (currentWaveSpeedTaskId === taskId) {
+    if (currentWaveSpeedAbortController) {
+      currentWaveSpeedAbortController.abort();
+      currentWaveSpeedAbortController = null;
+    }
+    if (currentWaveSpeedRequestId) {
+      eventSource23.emit(EventType.GENERATE_IMAGE_RESPONSE, {
+        id: currentWaveSpeedRequestId,
+        success: false,
+        error: "\u4EFB\u52A1\u5DF2\u53D6\u6D88",
+        prompt: currentWaveSpeedPrompt || ""
+      });
+    }
+    currentWaveSpeedTaskId = null;
+    currentWaveSpeedRequestId = null;
+    currentWaveSpeedPrompt = null;
+  }
+}
+
+function initializeWaveSpeedListener() {
+  eventSource23.on(EventType.GENERATE_IMAGE_REQUEST, wavespeedgenerate);
+  eventSource23.on("st_chatu8_cancel_wavespeed_task", handleCancelWaveSpeedTask);
+  addLog("WaveSpeed \u751F\u56FE\u4E8B\u4EF6\u76D1\u542C\u5668\u5DF2\u521D\u59CB\u5316\u3002");
+}
+
+async function replaceWithWaveSpeed() {
+  if (isPluginEnabled() && extension_settings51[extensionName].mode === "wavespeed") {
+    if (!window.initializeWaveSpeedListener) {
+      window.initializeWaveSpeedListener = true;
+      initializeWaveSpeedListener();
+    }
+    initializeImageProcessing();
+  } else {
+    if (window.initializeWaveSpeedListener) {
+      eventSource23.removeListener(EventType.GENERATE_IMAGE_REQUEST, wavespeedgenerate);
+      eventSource23.removeListener("st_chatu8_cancel_wavespeed_task", handleCancelWaveSpeedTask);
+      window.initializeWaveSpeedListener = false;
+      addLog("WaveSpeed \u751F\u56FE\u4E8B\u4EF6\u76D1\u542C\u5668\u5DF2\u5173\u95ED\u3002");
+    }
+  }
+}
+
+var init_wavespeed = __esm({
+  "utils/wavespeed.js"() {
+    init_utils();
+    init_config();
+    init_database();
+    init_genParams();
+    init_iframe2();
+    init_taskQueue();
+    init_characterprompt();
+    init_banana();
+    init_imageGenStats();
+    currentWaveSpeedTaskId = null;
+    currentWaveSpeedRequestId = null;
+    currentWaveSpeedPrompt = null;
+    currentWaveSpeedAbortController = null;
   }
 });
 
@@ -72682,7 +73323,7 @@ function checkRequiredConfigs() {
   const mode = s.mode || "comfyui";
   results.push({
     name: "\u751F\u56FE\u540E\u7AEF (mode)",
-    ok: ["comfyui", "novelai", "sd", "banana"].includes(mode),
+    ok: ["comfyui", "novelai", "sd", "runninghub", "banana", "wavespeed"].includes(mode),
     value: mode
   });
   results.push({
@@ -72719,6 +73360,17 @@ function checkRequiredConfigs() {
       name: "Banana API Key",
       ok: !!b.apiKey && b.apiKey !== "123456",
       value: b.apiKey ? "(\u5DF2\u914D\u7F6E)" : "(\u672A\u586B)"
+    });
+  } else if (mode === "wavespeed") {
+    results.push({
+      name: "WaveSpeed API \u5730\u5740",
+      ok: !!s.wavespeed_apiUrl,
+      value: s.wavespeed_apiUrl || "(\u672A\u586B)"
+    });
+    results.push({
+      name: "WaveSpeed API Key",
+      ok: !!s.wavespeed_apiKey,
+      value: s.wavespeed_apiKey ? "(\u5DF2\u914D\u7F6E)" : "(\u672A\u586B)"
     });
   }
   const llmProfile = s.llm_profiles?.[s.current_llm_profile || "\u9ED8\u8BA4"];
@@ -73054,6 +73706,7 @@ var init_configBrowseAPI = __esm({
       "switch_tab_video_assets": { selector: '.st-chatu8-nav-link[data-tab="video_assets"]', desc: "\u5207\u6362\u5230\u300C\u89C6\u9891\u8D44\u4EA7\u300D\u9875 \u2014 \u89D2\u8272\u3001\u90E8\u4F4D\u3001\u573A\u666F\u3001\u9053\u5177\u3001\u59FF\u52BF\u53CA\u97F3\u9891\u7D20\u6750\u7BA1\u7406" },
       "switch_tab_video_asset_gen": { selector: '.st-chatu8-nav-link[data-tab="video_asset_gen"]', desc: "\u5207\u6362\u5230\u300C\u89C6\u9891\u8D44\u4EA7\u751F\u6210\u300D\u9875 \u2014 \u8F93\u5165\u9700\u6C42\u4E0E\u53C2\u8003\u7D20\u6750\u7B80\u4ECB\u751F\u6210\u89C6\u9891\u8D44\u4EA7\u4E0E\u5206\u955C" },
       "switch_tab_banana": { selector: '.st-chatu8-nav-link[data-tab="banana"]', desc: "\u5207\u6362\u5230\u300CBanana/grok\u300D\u8BBE\u7F6E\u9875 \u2014 Banana API\u914D\u7F6E\u3001\u6A21\u578B\u3001\u591A\u8F6E\u5BF9\u8BDD\u9884\u8BBE" },
+      "switch_tab_wavespeed": { selector: '.st-chatu8-nav-link[data-tab="wavespeed"]', desc: "\u5207\u6362\u5230\u300CWaveSpeed\u300D\u8BBE\u7F6E\u9875 \u2014 WaveSpeed API\u914D\u7F6E\u3001\u6A21\u578B\u9009\u62E9\u4E0E\u751F\u6210\u53C2\u6570" },
       "switch_tab_llm": { selector: '.st-chatu8-nav-link[data-tab="llm"]', desc: "\u5207\u6362\u5230\u300CLLM\u300D\u8BBE\u7F6E\u9875 \u2014 \u5927\u8BED\u8A00\u6A21\u578BAPI\u914D\u7F6E\u3001\u4E0A\u4E0B\u6587\u9884\u8BBE\u3001\u8BF7\u6C42\u7C7B\u578B\u5206\u914D" },
       "switch_tab_vocabulary": { selector: '.st-chatu8-nav-link[data-tab="vocabulary"]', desc: "\u5207\u6362\u5230\u300C\u8BCD\u5E93\u300D\u8BBE\u7F6E\u9875 \u2014 \u81EA\u52A8\u5B8C\u6210\u8BCD\u5E93\u641C\u7D22\u8BBE\u7F6E" },
       "switch_tab_knowledgeBase": { selector: '.st-chatu8-nav-link[data-tab="knowledgeBase"]', desc: "\u5207\u6362\u5230\u300C\u8D44\u6599\u5E93\u300D\u8BBE\u7F6E\u9875 \u2014 \u7528\u6237\u81EA\u5B9A\u4E49\u77E5\u8BC6\u8D44\u6599\u5E93\u7BA1\u7406" },
@@ -74543,6 +75196,13 @@ function getSettingsContextPrompt() {
     contextStr += `- banana.apiKey: ${b.apiKey ? "(\u5DF2\u914D\u7F6E)" : "(\u672A\u586B)"}
 `;
     contextStr += `- banana.model: ${b.model || "(\u672A\u9009\u62E9)"}
+`;
+  } else if (mode === "wavespeed") {
+    contextStr += `- wavespeed_apiUrl: ${settings3.wavespeed_apiUrl || "(\u672A\u586B)"}
+`;
+    contextStr += `- wavespeed_apiKey: ${settings3.wavespeed_apiKey ? "(\u5DF2\u914D\u7F6E)" : "(\u672A\u586B)"}
+`;
+    contextStr += `- wavespeed_model: ${settings3.wavespeed_model || "(\u672A\u9009\u62E9)"}
 `;
   }
   const llmProfileName = settings3.current_llm_profile || "\u9ED8\u8BA4";
@@ -87418,7 +88078,7 @@ init_config();
 init_ui_common();
 
 
-var generationTabs = ["sd", "novelai", "comfyui", "runninghub"];
+var generationTabs = ["sd", "novelai", "comfyui", "runninghub", "wavespeed"];
 function syncAllPromptReplaceFields(force = false) {
   const settings3 = extension_settings64[extensionName];
   const presetName = settings3.prompt_replace_id;
@@ -87718,6 +88378,7 @@ var typeTexts = {
   [TaskType.AUTO_CLICK]: "\u81EA\u52A8\u70B9\u51FB",
   [TaskType.LLM]: "LLM \u8BF7\u6C42",
   [TaskType.BANANA]: "Banana \u751F\u56FE",
+  [TaskType.WAVESPEED]: "WaveSpeed \u751F\u56FE",
   [TaskType.SD]: "SD \u751F\u56FE"
 };
 function renderTaskList(tasks) {
@@ -87782,6 +88443,10 @@ function handleCancelTask(taskId) {
   } else if (task.type === TaskType.BANANA) {
     eventSource32.emit("st_chatu8_cancel_banana_task", { taskId });
     console.log("[TaskManager] \u5DF2\u89E6\u53D1 Banana \u53D6\u6D88\u4E8B\u4EF6");
+  } else if (task.type === TaskType.WAVESPEED) {
+    eventSource32.emit("st_chatu8_cancel_wavespeed_task", { taskId });
+    eventSource32.emit("st_chatu8_cancel_task", { taskId });
+    console.log("[TaskManager] \u5DF2\u89E6\u53D1 WaveSpeed \u53D6\u6D88\u4E8B\u4EF6");
   } else if (task.type === TaskType.RUNNINGHUB || task.type === TaskType.RUNNINGHUB_IMG || task.type === TaskType.RUNNINGHUB_IMG2VID || task.type === TaskType.RUNNINGHUB_REF2VID) {
     eventSource32.emit("st_chatu8_cancel_runninghub_task", { taskId });
     eventSource32.emit("st_chatu8_cancel_task", { taskId });
@@ -88201,6 +88866,19 @@ async function handleExportLog() {
 `;
     settingsInfo += `- \u5BF9\u8BDD\u9884\u8BBE: ${banana.conversationPresetId || "\u65E0"}
 `;
+  } else if (mode === "wavespeed") {
+    settingsInfo += `\u3010WaveSpeed \u8BBE\u7F6E\u3011
+`;
+    settingsInfo += `- API \u57FA\u7840\u5730\u5740: ${settings3.wavespeed_apiUrl || "\u65E0"}
+`;
+    settingsInfo += `- \u6587\u751F\u56FE\u6A21\u578B: ${settings3.wavespeed_model || "\u65E0"}
+`;
+    settingsInfo += `- \u4FEE\u56FE\u6A21\u578B: ${settings3.wavespeed_edit_model || "\u65E0"}
+`;
+    settingsInfo += `- \u89C6\u9891\u6A21\u578B: ${settings3.wavespeed_video_model || "\u65E0"}
+`;
+    settingsInfo += `- \u5C3A\u5BF8: ${settings3.wavespeed_width || 1024}x${settings3.wavespeed_height || 1024} (${settings3.wavespeed_size_format || "asterisk"})
+`;
   }
   settingsInfo += "============================================\n\n";
   const finalLogContent = settingsInfo + logContent;
@@ -88227,7 +88905,9 @@ function handleClearLog() {
 var BACKEND_LABELS = {
   sd: { name: "SD WebUI", icon: "\u{1F5BC}\uFE0F", color: "#42A5F5" },
   comfyui: { name: "ComfyUI", icon: "\u{1F527}", color: "#AB47BC" },
+  runninghub: { name: "RunningHub", icon: "\u2601\uFE0F", color: "#26C6DA" },
   banana: { name: "Banana / Grok", icon: "\u{1F34C}", color: "#FFA726" },
+  wavespeed: { name: "WaveSpeed", icon: "\u26A1", color: "#EC407A" },
   novelai: { name: "NovelAI", icon: "\u2728", color: "#66BB6A" }
 };
 var _currentPeriod = "day";
@@ -89650,7 +90330,7 @@ function adjustPresetBoxPosition(wrapper, dropdown) {
 }
 
 // utils/settings/prompt.js
-var generationTabs2 = ["sd", "novelai", "comfyui", "runninghub"];
+var generationTabs2 = ["sd", "novelai", "comfyui", "runninghub", "wavespeed"];
 function stripChineseAnnotations2(text) {
   if (!text) return "";
   return text.replace(/（[^）]*）/g, "");
@@ -99437,6 +100117,197 @@ ${audioDescLines}
   $("#runninghub_test_llm_ref2vid_btn").off("click.rh_llm_ref2vid").on("click.rh_llm_ref2vid", handleLlmRef2VidPromptGen);
 }
 
+function initWaveSpeedUI(settingsModal) {
+  const settings3 = extension_settings81[extensionName];
+  if (!settings3) return;
+  const wsModelConfigs = [
+    {
+      id: "wavespeed_model",
+      optionsKey: "wavespeed_custom_models",
+      editBtnId: "#edit_wavespeed_model_options",
+      title: "\u7F16\u8F91\u300CWaveSpeed \u6587\u751F\u56FE\u6A21\u578B\u300D\u4E0B\u62C9\u9009\u9879",
+      defaultOptions: defaultSettings.wavespeed_custom_models || [
+        "wavespeed-ai/z-image/turbo",
+        "wavespeed-ai/flux-dev",
+        "wavespeed-ai/flux-schnell",
+        "wavespeed-ai/flux-dev-ultra-fast",
+        "bytedance/seedream-v3",
+        "google/nano-banana-pro",
+        "wavespeed-ai/hidream-i1-full",
+        "wavespeed-ai/hidream-i1-dev"
+      ]
+    },
+    {
+      id: "wavespeed_edit_model",
+      optionsKey: "wavespeed_custom_edit_models",
+      editBtnId: "#edit_wavespeed_edit_model_options",
+      title: "\u7F16\u8F91\u300CWaveSpeed \u4FEE\u56FE/\u56FE\u751F\u56FE\u6A21\u578B\u300D\u4E0B\u62C9\u9009\u9879",
+      defaultOptions: defaultSettings.wavespeed_custom_edit_models || [
+        "wavespeed-ai/flux-kontext-pro",
+        "wavespeed-ai/flux-kontext-dev",
+        "wavespeed-ai/flux-dev",
+        "bytedance/seededit-v3"
+      ]
+    },
+    {
+      id: "wavespeed_video_model",
+      optionsKey: "wavespeed_custom_video_models",
+      editBtnId: "#edit_wavespeed_video_model_options",
+      title: "\u7F16\u8F91\u300CWaveSpeed \u89C6\u9891\u751F\u6210\u6A21\u578B\u300D\u4E0B\u62C9\u9009\u9879",
+      defaultOptions: defaultSettings.wavespeed_custom_video_models || [
+        "wavespeed-ai/wan-2.1/i2v-480p",
+        "wavespeed-ai/wan-2.1/i2v-720p",
+        "wavespeed-ai/wan-2.1/t2v-480p",
+        "wavespeed-ai/wan-2.1/t2v-720p",
+        "wavespeed-ai/minimax-h3/image-to-video",
+        "kwaivgi/kling-v1.6-i2v-standard"
+      ]
+    }
+  ];
+  wsModelConfigs.forEach((cfg) => {
+    const selectEl = document.getElementById(cfg.id);
+    if (!selectEl) return;
+    let opts = Array.isArray(settings3[cfg.optionsKey]) ? [...settings3[cfg.optionsKey]] : [...cfg.defaultOptions];
+    const currentVal = settings3[cfg.id] !== void 0 ? settings3[cfg.id] : opts[0] || "";
+    if (currentVal && !opts.includes(currentVal)) {
+      opts.unshift(currentVal);
+    }
+    settings3[cfg.optionsKey] = opts;
+    $(selectEl).empty();
+    opts.forEach((opt) => {
+      const optEl = document.createElement("option");
+      optEl.value = opt;
+      optEl.textContent = opt;
+      selectEl.appendChild(optEl);
+    });
+    if (currentVal) {
+      selectEl.value = currentVal;
+      settings3[cfg.id] = currentVal;
+    }
+    $(selectEl).off("change.ws_model").on("change.ws_model", (e) => {
+      settings3[cfg.id] = e.target.value;
+      saveSettingsDebounced53();
+    });
+    $(cfg.editBtnId).off("click.ws_edit").on("click.ws_edit", () => {
+      openRunningHubSelectOptionsEditor({
+        title: cfg.title,
+        settingKey: cfg.id,
+        optionsKey: cfg.optionsKey,
+        defaultOptions: cfg.defaultOptions,
+        selectEl
+      });
+    });
+  });
+  const wsParamKeys = [
+    { id: "wavespeed_apiUrl", default: "https://api.wavespeed.ai/api/v3" },
+    { id: "wavespeed_apiKey", default: "" },
+    { id: "wavespeed_image_param", default: "image" },
+    { id: "wavespeed_width", default: "1024" },
+    { id: "wavespeed_height", default: "1024" },
+    { id: "wavespeed_size_format", default: "asterisk" },
+    { id: "wavespeed_seed", default: "-1" },
+    { id: "wavespeed_steps", default: "0" },
+    { id: "wavespeed_cfg", default: "0" },
+    { id: "wavespeed_duration", default: "5" },
+    { id: "wavespeed_extra_json", default: "" },
+    { id: "AQT_wavespeed", default: "best quality, amazing quality, very aesthetic, absurdres" },
+    { id: "UCP_wavespeed", default: "" }
+  ];
+  wsParamKeys.forEach(({ id, default: defVal }) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.value = settings3[id] !== void 0 ? settings3[id] : defVal;
+      $(el).off("input change.ws_param").on("input change.ws_param", (e) => {
+        settings3[id] = e.target.value;
+        saveSettingsDebounced53();
+      });
+    }
+  });
+  const syncModeEl = document.getElementById("wavespeed_sync_mode");
+  if (syncModeEl) {
+    syncModeEl.checked = String(settings3.wavespeed_sync_mode) === "true";
+    $(syncModeEl).off("change.ws_sync").on("change.ws_sync", (e) => {
+      settings3.wavespeed_sync_mode = e.target.checked ? "true" : "false";
+      saveSettingsDebounced53();
+    });
+  }
+  const sizeEl = document.getElementById("wavespeed_size");
+  if (sizeEl) {
+    if (settings3.wavespeed_size) sizeEl.value = settings3.wavespeed_size;
+    $(sizeEl).off("change.ws_size").on("change.ws_size", (e) => {
+      const val = e.target.value;
+      settings3.wavespeed_size = val;
+      const parts = val.split("x");
+      if (parts.length === 2) {
+        const w = parts[0];
+        const h = parts[1];
+        settings3.wavespeed_width = w;
+        settings3.wavespeed_height = h;
+        const wEl = document.getElementById("wavespeed_width");
+        const hEl = document.getElementById("wavespeed_height");
+        if (wEl) wEl.value = w;
+        if (hEl) hEl.value = h;
+      }
+      saveSettingsDebounced53();
+    });
+  }
+  $("#wavespeed_apiKey_toggle").off("click.ws_toggle").on("click.ws_toggle", function() {
+    const input = document.getElementById("wavespeed_apiKey");
+    if (!input) return;
+    const icon = $(this).find("i");
+    if (input.type === "password") {
+      input.type = "text";
+      icon.removeClass("fa-eye").addClass("fa-eye-slash");
+    } else {
+      input.type = "password";
+      icon.removeClass("fa-eye-slash").addClass("fa-eye");
+    }
+  });
+  $("#testWaveSpeed").off("click.ws_test").on("click.ws_test", async () => {
+    const apiUrl = (document.getElementById("wavespeed_apiUrl")?.value || settings3.wavespeed_apiUrl || "https://api.wavespeed.ai/api/v3").trim().replace(/\/+$/, "");
+    const apiKey = (document.getElementById("wavespeed_apiKey")?.value || settings3.wavespeed_apiKey || "").trim();
+    const $statusBox = $("#wavespeed_balance_status");
+    if (!apiKey) {
+      toastr.warning("\u8BF7\u5148\u8F93\u5165 WaveSpeed API Key");
+      return;
+    }
+    $statusBox.show().html(`<span style="color: var(--st-chatu8-accent-color, #60a5fa);"><i class="fa-solid fa-spinner fa-spin"></i> \u6B63\u5728\u6D4B\u8BD5 WaveSpeed \u8FDE\u63A5\u5E76\u67E5\u8BE2\u4F59\u989D...</span>`);
+    try {
+      const res = await fetch(`${apiUrl}/balance`, {
+        method: "GET",
+        headers: {
+          "Authorization": `Bearer ${apiKey}`
+        }
+      });
+      const text = await res.text();
+      let body;
+      try {
+        body = JSON.parse(text);
+      } catch {
+        body = { message: text };
+      }
+      if (!res.ok || (body.code && body.code !== 200)) {
+        throw new Error(body.message || `HTTP ${res.status}`);
+      }
+      const balance = body.data?.balance ?? "0.00";
+      $statusBox.html(`
+        <div style="padding: 8px 12px; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.35); background: rgba(16, 185, 129, 0.1); color: #34d399; display: flex; align-items: center; justify-content: space-between;">
+          <span><i class="fa-solid fa-check-circle"></i> WaveSpeed API \u8FDE\u63A5\u6B63\u5E38</span>
+          <span>\u{1F4B5} \u8D26\u6237\u4F59\u989D: <strong>$${balance} USD</strong></span>
+        </div>
+      `);
+      toastr.success(`WaveSpeed \u8FDE\u63A5\u6210\u529F\uFF01\u4F59\u989D: $${balance} USD`);
+    } catch (err) {
+      $statusBox.html(`
+        <div style="padding: 8px 12px; border-radius: 6px; border: 1px solid rgba(244, 67, 54, 0.35); background: rgba(244, 67, 54, 0.1); color: #f87171;">
+          <i class="fa-solid fa-triangle-exclamation"></i> \u8FDE\u63A5\u6216\u67E5\u8BE2\u5931\u8D25: ${err.message}
+        </div>
+      `);
+      toastr.error(`WaveSpeed \u8FDE\u901A\u6D4B\u8BD5\u5931\u8D25: ${err.message}`);
+    }
+  });
+}
+
 // utils/settings/comfyuiVideoUi.js
 init_taskQueue();
 init_config();
@@ -103736,7 +104607,7 @@ function updateImg2ImgUI() {
     $badge.text("\u7EAF\u6587\u751F\u56FE").css({ background: "", color: "" });
   }
   const currentMode2 = extension_settings83[extensionName]?.mode;
-  if (currentImg2ImgRefImage && currentMode2 !== "banana") {
+  if (currentImg2ImgRefImage && currentMode2 !== "banana" && currentMode2 !== "wavespeed") {
     $channelHint.show();
   } else {
     $channelHint.hide();
@@ -104961,14 +105832,14 @@ async function executeImageGeneration() {
   }
   const hasImg2ImgRef = !!currentImg2ImgRefImage;
   const currentMode2 = extension_settings83[extensionName]?.mode;
-  if (hasImg2ImgRef && currentMode2 !== "banana") {
-    toastr.warning("\u26A0\uFE0F \u5F53\u524D\u63D2\u4EF6\u751F\u56FE\u6E20\u9053\u975E OpenAI (Banana)\uFF0C\u56FE\u751F\u56FE\u53C2\u8003\u56FE\u4EC5\u5728 OpenAI / Grok \u6E20\u9053\u4E0B\u652F\u6301\uFF0C\u8BF7\u5148\u5728\u63D2\u4EF6\u751F\u56FE\u8BBE\u7F6E\u4E2D\u5207\u6362\u751F\u56FE\u6E20\u9053\uFF01");
+  if (hasImg2ImgRef && currentMode2 !== "banana" && currentMode2 !== "wavespeed") {
+    toastr.warning("\u26A0\uFE0F \u5F53\u524D\u63D2\u4EF6\u751F\u56FE\u6E20\u9053\u975E OpenAI (Banana) \u6216 WaveSpeed\uFF0C\u56FE\u751F\u56FE\u53C2\u8003\u56FE\u4EC5\u5728 OpenAI / Grok / WaveSpeed \u6E20\u9053\u4E0B\u652F\u6301\uFF0C\u8BF7\u5148\u5728\u63D2\u4EF6\u751F\u56FE\u8BBE\u7F6E\u4E2D\u5207\u6362\u751F\u56FE\u6E20\u9053\uFF01");
     return;
   }
   const requestId = `vag_img_${Date.now()}_${Math.random().toString(36).substr(2, 8)}`;
   activeImageRequestId = requestId;
   isGeneratingImage = true;
-  const isImg2Img = hasImg2ImgRef && currentMode2 === "banana";
+  const isImg2Img = hasImg2ImgRef && (currentMode2 === "banana" || currentMode2 === "wavespeed");
   const statusMsg = isImg2Img ? "\u6B63\u5728\u8C03\u7528 OpenAI / Grok \u6E20\u9053\u6267\u884C\u56FE\u751F\u56FE..." : "\u6B63\u5728\u53D1\u9001\u751F\u56FE\u6307\u4EE4\u81F3\u751F\u56FE\u5F15\u64CE...";
   updateImageUIState(true, statusMsg);
   toastr.info(isImg2Img ? "\u{1F3A8} \u6B63\u5728\u8C03\u7528 OpenAI \u6E20\u9053\u6267\u884C\u56FE\u751F\u56FE..." : "\u{1F3A8} \u6B63\u5728\u8C03\u7528\u751F\u56FE\u529F\u80FD\u751F\u6210\u56FE\u7247\u8D44\u4EA7...", "\u751F\u56FE\u8BF7\u6C42\u5DF2\u53D1\u9001", { timeOut: 3e3 });
@@ -111483,6 +112354,19 @@ image### 1girl, solo, blue hair ###
   "st-chatu8-banana-conversation-preset-id": "\u5BF9\u8BDD\u578B\u751F\u56FE\u9884\u8BBE\u6863\u4F4D",
   "st-chatu8-banana-edit-preset": "\u56FE\u50CF\u7F16\u8F91\u9884\u8BBE",
   "st-chatu8-banana-video-preset": "\u89C6\u9891\u751F\u6210\u9884\u8BBE",
+  // ===== WaveSpeed 页（wavespeed.html） =====
+  wavespeed_apiUrl: "WaveSpeed API v3 \u57FA\u7840\u5730\u5740\uFF0C\u9ED8\u8BA4\u4E3A `https://api.wavespeed.ai/api/v3`",
+  wavespeed_apiKey: "WaveSpeed API Key\uFF08\u5728 wavespeed.ai \u63A7\u5236\u53F0 API Keys \u9875\u9762\u751F\u6210\uFF09",
+  wavespeed_model: "WaveSpeed \u6587\u751F\u56FE\u6A21\u578B ID\uFF08\u5982 `wavespeed-ai/z-image/turbo`\uFF0C\u53EF\u70B9\u51FB\u53F3\u4FA7\u6309\u94AE\u81EA\u5B9A\u4E49\u6DFB\u52A0\uFF09",
+  wavespeed_edit_model: "\u5728\u4F7F\u7528 `{\u4FEE\u56FE}` \u6216\u5E26\u53C2\u8003\u56FE\u65F6\u8C03\u7528\u7684 WaveSpeed \u56FE\u751F\u56FE/\u4FEE\u56FE\u6A21\u578B ID",
+  wavespeed_video_model: "\u5728\u4F7F\u7528 `{\u89C6\u9891}` \u6A21\u5F0F\u65F6\u8C03\u7528\u7684 WaveSpeed \u89C6\u9891\u751F\u6210\u6A21\u578B ID",
+  wavespeed_image_param: "\u4E0A\u4F20\u53C2\u8003\u56FE\u540E\u5728 JSON \u8BF7\u6C42\u4F53\u4E2D\u4F20\u9012\u7684\u5B57\u6BB5\u540D\uFF08`image` \u6216 `images` \u6570\u7EC4\uFF09",
+  wavespeed_size_format: "WaveSpeed v3 \u591A\u6570\u6A21\u578B\u4F7F\u7528 `1024*1024`\uFF08\u661F\u53F7\u5206\u9694\uFF09\u4F5C\u4E3A `size` \u53C2\u6570",
+  wavespeed_sync_mode: "\u5F00\u542F\u540E\u5728\u8BF7\u6C42\u4E2D\u9644\u5E26 `enable_sync_mode: true`\uFF1B\u82E5\u8D85\u8FC7\u540C\u6B65\u7B49\u5F85\u7A97\u53E3\u4ECD\u4F1A\u81EA\u52A8\u56DE\u9000\u81F3\u5F02\u6B65\u8F6E\u8BE2",
+  wavespeed_extra_json: "\u53EF\u586B\u5199\u989D\u5916 JSON \u5B57\u6BB5\uFF08\u5982 `{\"output_format\": \"jpeg\"}`\uFF09\uFF0C\u53D1\u9001\u65F6\u81EA\u52A8\u5408\u5E76\u8FDB\u8BF7\u6C42\u4F53",
+  AQT_wavespeed: "\u6B63\u9762\u8D28\u91CF\u9884\u8BBE",
+  UCP_wavespeed: "\u8D1F\u9762\u8D28\u91CF\u9884\u8BBE",
+  yusheid_wavespeed: "WaveSpeed \u63D0\u793A\u8BCD\u9884\u8BBE\u6863\u4F4D",
   // ===== 悬浮球 / 智绘姬（fab.html） =====
   enable_chatu8_fab: "\u663E\u793A**\u667A\u7ED8\u59EC\u60AC\u6D6E\u7403**\uFF08\u5C4F\u5E55\u4E0A\u7684\u53EF\u62D6\u52A8\u5165\u53E3\uFF09",
   enable_chatu8_fab_video: "\u542F\u7528\u89C6\u9891\u5F62\u8C61\u6A21\u5F0F\uFF08\u66FF\u4EE3\u7B80\u5355\u56FE\u6807\uFF09",
@@ -111831,6 +112715,7 @@ function hideHelpModal() {
 init_comfyui();
 init_banana();
 init_runninghub();
+init_wavespeed();
 
 // utils/iframe/autoLLMClick.js
 init_config();
@@ -112074,10 +112959,10 @@ function initAutoLLMClick() {
 // utils/ui.js
 var settings2;
 var currentPreviewTheme2 = {};
-var generationTabs3 = ["sd", "novelai", "comfyui", "runninghub"];
-var MODE_NAV_TABS = ["sd", "novelai", "comfyui", "runninghub", "banana"];
+var generationTabs3 = ["sd", "novelai", "comfyui", "runninghub", "wavespeed"];
+var MODE_NAV_TABS = ["sd", "novelai", "comfyui", "runninghub", "banana", "wavespeed"];
 var VIDEO_NAV_TABS = ["runninghub_video", "comfyui_video", "video_assets", "video_asset_gen"];
-var tabIds = ["main", "sd", "novelai", "comfyui", "comfyui_video", "runninghub", "runninghub_video", "video_assets", "video_asset_gen", "banana", "llm", "vocabulary", "knowledgeBase", "character", "theme", "fab", "image-cache", "regex", "send_data", "about", "log"];
+var tabIds = ["main", "sd", "novelai", "comfyui", "comfyui_video", "runninghub", "runninghub_video", "video_assets", "video_asset_gen", "banana", "wavespeed", "llm", "vocabulary", "knowledgeBase", "character", "theme", "fab", "image-cache", "regex", "send_data", "about", "log"];
 var FAB_ICON_ACCEPTED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
 var FAB_ICON_MAX_FILE_SIZE = 5 * 1024 * 1024;
 var FAB_ICON_MAX_DIMENSION = 512;
@@ -112341,6 +113226,7 @@ function updateGenerationModeHandlers() {
   replaceWithcomfyui();
   replaceWithBanana();
   replaceWithRunningHub();
+  replaceWithWaveSpeed();
   addLog("[UI] Generation mode handlers updated for mode: " + extension_settings113[extensionName].mode);
 }
 async function initUI({ check_update: check_update2 }) {
@@ -112948,6 +113834,7 @@ async function initUI({ check_update: check_update2 }) {
   init(settingsModal);
   initBananaUI(settingsModal);
   initRunningHubUI(settingsModal);
+  initWaveSpeedUI(settingsModal);
   initComfyUIVideoUI(settingsModal);
   initVideoAssets(settingsModal);
   initVideoAssetGenUI(settingsModal);
@@ -113082,6 +113969,7 @@ async function initUI({ check_update: check_update2 }) {
   settingsModal.find("#sd_csize").on("change", () => size_change("sd"));
   settingsModal.find("#novelai_size").on("change", () => size_change("novelai"));
   settingsModal.find("#comfyui_size").on("change", () => size_change("comfyui"));
+  settingsModal.find("#wavespeed_size").on("change", () => size_change("wavespeed"));
   const allIDs = Object.keys(defaultSettings);
   const ignoreIDs = ["yushe", "yusheid", "fixedPrompt", "fixedPrompt_end", "negativePrompt", "workers", "workerid", "worker", "themes", "theme_id", "prompt_replace", "prompt_replace_id", "prompt_replace_text", "UCP", "AQT", "nai3CharRef", "worldBookList", "worldBookList_id", "worldbook_content", "insertOriginalText", "convertToJpegStorage", "randomYushe", "randomVibeGroup", "enablePregen", "zidongdianji", "zidongdianji2"];
   $("#InformationExtracted, #InformationExtracted_range").on("input", (event) => {
@@ -113759,6 +114647,7 @@ async function initUI({ check_update: check_update2 }) {
 // index.js
 init_banana();
 init_runninghub();
+init_wavespeed();
 init_utils();
 init_comfyui();
 init_newline_fix();
@@ -114386,6 +115275,7 @@ async function chenk() {
   replaceWithcomfyui();
   replaceWithBanana();
   replaceWithRunningHub();
+  replaceWithWaveSpeed();
   replaceWithnovelai();
   replaceWithSd();
 }
